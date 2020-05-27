@@ -12,15 +12,16 @@
   <img alt="Logo do projeto" src="./_docs/logo.png" />
 </p>
 
-## Como contribuir com o projeto?
-...
+## Contributing/Contribuir
+Quer contribuir com o projeto? [Confira o passo a passo](./CONTRIBUTING.md)
+Quer ver o que está por vir? [Acompanhe aqui](https://github.com/omariosouto/flappy-bird-devsoutinho/projects)
 
-## Versioning
+## Versioning/Versionamento
 
 Esse projeto não possui um sistema de versionamento.
 
-## Histórico
+## History/Histórico
 Da uma olhada na aba [Releases](https://github.com/afonsopacifer/open-source-boilerplate/releases) pra acompanhar as alterações feitas no projeto.
 
-## Licença do Projeto
+## License/Licença do Projeto
 [MIT License](./LICENSE.md) © [Mario Souto](http://mariosouto.com/)
