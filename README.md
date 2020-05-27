@@ -13,5 +13,12 @@
 ## Como contribuir com o projeto?
 ...
 
+## Versioning
+
+Esse projeto não possui um sistema de versionamento.
+
+## Histórico
+Da uma olhada na aba [Releases](https://github.com/afonsopacifer/open-source-boilerplate/releases) pra acompanhar as alterações feitas no projeto.
+
 ## Licença do Projeto
 [MIT License](./LICENSE.md) © [Mario Souto](http://mariosouto.com/)
