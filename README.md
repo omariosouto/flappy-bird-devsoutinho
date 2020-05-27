@@ -6,7 +6,9 @@
 > 
 > Quer ver como ta ficando? Acessa a [**DEMO**](https://mariosouto.com/flappy-bird-devsoutinho/)
 
-![Logo do Projeto](./_docs/logo.png)
+<p align="center">
+  <img alt="Logo do projeto" src="./_docs/logo.png" />
+</p>
 
 - [Switch to 🇺🇸](./_docs/README_en-us.md)?
 
