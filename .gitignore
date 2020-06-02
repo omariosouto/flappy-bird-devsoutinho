@@ -116,3 +116,4 @@ dist
 .pnp.*
 
 sample/
+.DS_Store
