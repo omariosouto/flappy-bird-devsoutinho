@@ -22,7 +22,7 @@ Quer ver o que está por vir? [Acompanhe aqui](https://github.com/omariosouto/fl
 Esse projeto não possui um sistema de versionamento.
 
 ## History/Histórico
-Da uma olhada na aba [Releases](https://github.com/afonsopacifer/open-source-boilerplate/releases) pra acompanhar as alterações feitas no projeto.
+Da uma olhada na aba [Releases](https://github.com/omariosouto/flappy-bird-devsoutinho/releases) pra acompanhar as alterações feitas no projeto.
 
 ## License/Licença do Projeto
 [MIT License](./LICENSE.md) © [Mario Souto](http://mariosouto.com/)
