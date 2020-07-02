@@ -59,7 +59,7 @@ function criaChao() {
       // console.log('[chao.x]', chao.x);
       // console.log('[repeteEm]',repeteEm);
       // console.log('[movimentacao]', movimentacao % repeteEm);
-      
+
       chao.x = movimentacao % repeteEm;
     },
     desenha() {
@@ -70,7 +70,7 @@ function criaChao() {
         chao.x, chao.y,
         chao.largura, chao.altura,
       );
-  
+
       contexto.drawImage(
         sprites,
         chao.spriteX, chao.spriteY,
@@ -121,18 +121,18 @@ function criaFlappyBird() {
         }, 500);
         return;
       }
-  
+
       flappyBird.velocidade = flappyBird.velocidade + flappyBird.gravidade;
       flappyBird.y = flappyBird.y + flappyBird.velocidade;
     },
     movimentos: [
       { spriteX: 0, spriteY: 0, }, // asa pra cima
-      { spriteX: 0, spriteY: 26, }, // asa no meio 
+      { spriteX: 0, spriteY: 26, }, // asa no meio
       { spriteX: 0, spriteY: 52, }, // asa pra baixo
-      { spriteX: 0, spriteY: 26, }, // asa no meio 
+      { spriteX: 0, spriteY: 26, }, // asa no meio
     ],
     frameAtual: 0,
-    atualizaOFrameAtual() {     
+    atualizaOFrameAtual() {
       const intervaloDeFrames = 10;
       const passouOIntervalo = frames % intervaloDeFrames === 0;
       // console.log('passouOIntervalo', passouOIntervalo)
@@ -160,7 +160,7 @@ function criaFlappyBird() {
       );
     }
   }
-  return flappyBird;  
+  return flappyBird;
 }
 
 
@@ -183,9 +183,9 @@ const mensagemGetReady = {
   }
 }
 
-// 
+//
 // [Canos]
-// 
+//
 
 function criaCanos() {
   const canos = {
@@ -204,24 +204,24 @@ function criaCanos() {
       canos.pares.forEach(function(par) {
         const yRandom = par.y;
         const espacamentoEntreCanos = 90;
-  
+
         const canoCeuX = par.x;
-        const canoCeuY = yRandom; 
+        const canoCeuY = yRandom;
 
         // [Cano do Céu]
         contexto.drawImage(
-          sprites, 
+          sprites,
           canos.ceu.spriteX, canos.ceu.spriteY,
           canos.largura, canos.altura,
           canoCeuX, canoCeuY,
           canos.largura, canos.altura,
         )
-        
+
         // [Cano do Chão]
         const canoChaoX = par.x;
-        const canoChaoY = canos.altura + espacamentoEntreCanos + yRandom; 
+        const canoChaoY = canos.altura + espacamentoEntreCanos + yRandom;
         contexto.drawImage(
-          sprites, 
+          sprites,
           canos.chao.spriteX, canos.chao.spriteY,
           canos.largura, canos.altura,
           canoChaoX, canoChaoY,
@@ -241,7 +241,7 @@ function criaCanos() {
     temColisaoComOFlappyBird(par) {
       const cabecaDoFlappy = globais.flappyBird.y;
       const peDoFlappy = globais.flappyBird.y + globais.flappyBird.altura;
-      
+
       if(globais.flappyBird.x >= par.x) {
         if(cabecaDoFlappy <= par.canoCeu.y) {
           return true;
@@ -286,9 +286,9 @@ function criaCanos() {
 }
 
 
-// 
+//
 // [Telas]
-// 
+//
 const globais = {};
 let telaAtiva = {};
 function mudaParaTela(novaTela) {
@@ -309,7 +309,7 @@ const Telas = {
     desenha() {
       planoDeFundo.desenha();
       globais.flappyBird.desenha();
-      
+
       globais.chao.desenha();
       mensagemGetReady.desenha();
     },
@@ -351,6 +351,12 @@ function loop() {
 
 window.addEventListener('click', function() {
   if(telaAtiva.click) {
+    telaAtiva.click();
+  }
+});
+
+window.addEventListener('keydown', function(e) {
+  if (telaAtiva.click && !e.repeat && e.code === 'Space') {
     telaAtiva.click();
   }
 });
