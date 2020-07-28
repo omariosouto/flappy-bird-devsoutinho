@@ -394,5 +394,17 @@ window.addEventListener('click', function() {
   }
 });
 
+window.addEventListener ('keypress', (event) => {
+  const keyCode = event.keyCode;
+  switch (keyCode) {
+    case 32:
+        if(telaAtiva.click) {
+          telaAtiva.click();
+        }
+      break;
+  }
+  
+});
+
 mudaParaTela(Telas.INICIO);
 loop();
