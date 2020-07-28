@@ -5,6 +5,9 @@ let frames = 0;
 const som_HIT = new Audio();
 som_HIT.src = './efeitos/hit.wav';
 
+const som_PULO = new Audio();
+som_PULO.src = './efeitos/pulo.wav';
+
 const sprites = new Image();
 sprites.src = './sprites.png';
 
@@ -106,8 +109,9 @@ function criaFlappyBird() {
     pula() {
       console.log('devo pular');
       console.log('[antes]', flappyBird.velocidade);
-      flappyBird.velocidade =  - flappyBird.pulo;
+      flappyBird.velocidade -=  flappyBird.pulo;
       console.log('[depois]', flappyBird.velocidade);
+      som_PULO.play();
     },
     gravidade: 0.25,
     velocidade: 0,
