@@ -3,9 +3,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  canvas {
+}
+canvas {
     border: 1px solid #000;
     display: block;
     margin: 0 auto;
-  }
+}
