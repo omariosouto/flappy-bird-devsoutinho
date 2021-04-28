@@ -2,8 +2,12 @@ console.log('[DevSoutinho] Flappy Bird');
 console.log('Inscreva-se no canal :D https://www.youtube.com/channel/UCzR2u5RWXWjUh7CwLSvbitA');
 
 let frames = 0;
+
 const som_HIT = new Audio();
 som_HIT.src = './efeitos/hit.wav';
+
+const som_PONTO = new Audio();
+som_PONTO.src = './efeitos/ponto.wav';
 
 const sprites = new Image();
 sprites.src = './sprites.png';
@@ -313,11 +317,23 @@ function criaPlacar() {
       contexto.fillText(`${placar.pontuacao}`, canvas.width - 10, 35);      
     },
     atualiza() {
-      const intervaloDeFrames = 20;
-      const passouOIntervalo = frames % intervaloDeFrames === 0;
+      let flappyBirdX = globais.flappyBird.x;
+      let canoX;
 
-      if(passouOIntervalo) {
+      switch (globais.canos.pares.length) {
+        case 0:
+          return;
+        case 1:
+          canoX = globais.canos.pares[0].x;
+          break;
+        case 2:
+          canoX = Math.min(globais.canos.pares[0].x, globais.canos.pares[1].x);
+      }
+
+      if(flappyBirdX === canoX) {
         placar.pontuacao = placar.pontuacao + 1;
+
+        som_PONTO.play();
       }
     }
   }
